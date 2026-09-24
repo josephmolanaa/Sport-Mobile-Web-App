@@ -90,3 +90,211 @@ body {
 .footer {
   border-top: 1px solid #d8e2f1;
 }
+
+@media (max-width: 760px) {
+  .container {
+    width: min(100% - 32px, 1120px);
+  }
+
+  .nav {
+    min-height: 68px;
+    height: auto;
+    position: relative;
+  }
+
+  .brand {
+    font-size: 19px;
+  }
+
+  .brand-mark {
+    width: 30px;
+    height: 30px;
+    font-size: 18px;
+  }
+
+  .nav-toggle {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 4px;
+    width: 42px;
+    height: 42px;
+    padding: 0;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    background: #fff;
+    cursor: pointer;
+  }
+
+  .nav-toggle span {
+    display: block !important;
+    flex: 0 0 2px !important;
+    width: 22px !important;
+    height: 2px !important;
+    margin: 0 !important;
+    background: var(--deep) !important;
+  }
+
+  .nav-links,
+  .page-nav .nav-links {
+    position: absolute;
+    z-index: 10;
+    top: calc(100% + 8px);
+    right: 0;
+    display: none;
+    width: min(220px, calc(100vw - 32px));
+    padding: 10px;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    background: #fff;
+    box-shadow: 0 16px 35px #092f7820;
+  }
+
+  .nav-links.show {
+    display: grid;
+    gap: 3px;
+  }
+
+  .nav-links a {
+    padding: 11px 12px;
+    border-radius: 8px;
+  }
+
+  .nav-links .btn-outline {
+    text-align: center;
+    margin-top: 4px;
+  }
+
+  .page-shell {
+    padding: 48px 0 56px;
+  }
+
+  .page-title h1 {
+    font-size: clamp(30px, 9vw, 40px);
+    line-height: 1.08;
+  }
+
+  .page-title .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .page-card {
+    padding: 18px;
+  }
+
+  .booking-panel {
+    gap: 14px;
+  }
+
+  .booking-panel .panel-heading,
+  .booking-panel .search-field,
+  .booking-panel > .btn {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .court-info {
+    gap: 10px;
+  }
+
+  .court-info > div:first-child {
+    min-width: 0;
+  }
+
+  .court-info h3 {
+    overflow-wrap: anywhere;
+  }
+
+  .court-bottom {
+    gap: 12px;
+  }
+
+  .court-bottom strong {
+    font-size: 14px;
+  }
+
+  .detail-info h1 {
+    font-size: 26px;
+  }
+
+  .summary-row {
+    gap: 16px;
+  }
+
+  .summary-row b,
+  .summary-row strong {
+    text-align: right;
+  }
+
+  .table-wrap {
+    padding: 8px;
+  }
+
+  .orders {
+    min-width: 620px;
+  }
+
+  .form-grid {
+    gap: 14px;
+  }
+
+  .hero {
+    min-height: 0;
+    padding-bottom: 40px;
+  }
+
+  .hero-grid {
+    min-height: 0;
+    gap: 20px;
+  }
+
+  .hero h1 {
+    font-size: clamp(40px, 12vw, 58px);
+    letter-spacing: -2px;
+  }
+
+  .hero-actions {
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .hero-stats {
+    gap: 18px;
+    flex-wrap: wrap;
+    margin-top: 34px;
+  }
+
+  .hero-art {
+    height: 250px;
+  }
+
+  .art-card {
+    max-width: 170px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .footer-grid > div:first-child {
+    grid-column: auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
