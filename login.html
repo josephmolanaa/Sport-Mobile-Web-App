@@ -1,0 +1,43 @@
+﻿<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Masuk — Warrior Sport</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="pages.css" />
+  </head>
+  <body>
+    <main class="auth-shell">
+      <section class="auth-card">
+        <a class="brand" href="index.html"
+          ><span class="brand-mark">W</span
+          ><span>warrior<span class="brand-accent">sport</span></span></a
+        >
+        <h1>Selamat datang kembali</h1>
+        <p>Masuk untuk melihat booking dan mengelola akunmu.</p>
+        <form
+          onsubmit="
+            event.preventDefault();
+            location.href = 'riwayat-pesanan.html';
+          "
+        >
+          <label
+            >Email<input
+              type="email"
+              placeholder="nama@email.com"
+              required /></label
+          ><label
+            >Password<input
+              type="password"
+              placeholder="••••••••"
+              required /></label
+          ><button class="btn btn-primary" type="submit">Masuk</button>
+        </form>
+        <div class="auth-footer">
+          Belum punya akun? <a href="#daftar">Daftar sekarang</a>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

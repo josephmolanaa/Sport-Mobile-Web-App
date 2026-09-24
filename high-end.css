@@ -1,0 +1,128 @@
+:root {
+  --green: #173d98;
+  --deep: #092f78;
+  --pale: #eef4fb;
+  --line: #d8e2f1;
+}
+body {
+  font-family: Poppins, sans-serif;
+  font-variant-numeric: tabular-nums;
+}
+.hero,
+.booking-panel,
+.section,
+.benefits,
+.cta {
+  isolation: isolate;
+}
+.hero:after,
+.benefits:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image: radial-gradient(#173d9814 0.7px, transparent 0.7px);
+  background-size: 6px 6px;
+  opacity: 0.16;
+}
+.benefits {
+  position: relative;
+}
+.hero-copy,
+.hero-art,
+.booking-panel-inner,
+.court-card,
+.benefit,
+.cta {
+  animation: rise-in 0.8s cubic-bezier(0.32, 0.72, 0, 1) both;
+}
+.hero-art {
+  animation-delay: 90ms;
+}
+.booking-panel-inner {
+  animation-delay: 160ms;
+}
+.court-card:nth-child(2) {
+  animation-delay: 100ms;
+}
+.court-card:nth-child(3) {
+  animation-delay: 180ms;
+}
+.benefit:nth-child(2) {
+  animation-delay: 100ms;
+}
+.benefit:nth-child(3) {
+  animation-delay: 180ms;
+}
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+    filter: blur(5px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+    filter: none;
+  }
+}
+.btn,
+.book-btn,
+.filter,
+.heart {
+  transition:
+    transform 0.55s cubic-bezier(0.32, 0.72, 0, 1),
+    background-color 0.35s cubic-bezier(0.32, 0.72, 0, 1),
+    box-shadow 0.55s cubic-bezier(0.32, 0.72, 0, 1);
+}
+.btn,
+.book-btn {
+  border-radius: 12px;
+}
+.booking-panel-inner {
+  border-radius: 24px;
+  padding: 24px;
+  box-shadow:
+    0 24px 60px #092f782b,
+    inset 0 1px #fff,
+    inset 0 -1px #d8e2f1;
+}
+.booking-panel select,
+.booking-panel input {
+  height: 42px;
+  border-radius: 10px;
+  background: #f9fbff;
+}
+.booking-panel .btn {
+  height: 42px;
+  border-radius: 12px;
+}
+.court-card {
+  border-radius: 20px;
+  box-shadow: 0 14px 35px #092f7814;
+}
+.court-image {
+  border-radius: 20px 20px 0 0;
+}
+.benefit {
+  border-radius: 22px;
+  background: #ffffff80;
+}
+.cta {
+  box-shadow: 0 20px 45px #092f7824;
+}
+@media (max-width: 760px) {
+  .booking-panel-inner {
+    padding: 20px;
+    border-radius: 20px;
+  }
+  .hero-copy,
+  .hero-art,
+  .booking-panel-inner,
+  .court-card,
+  .benefit,
+  .cta {
+    animation-duration: 0.65s;
+  }
+}

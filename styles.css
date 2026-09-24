@@ -1,0 +1,348 @@
+:root {
+  --green: #1cb383;
+  --deep: #123c38;
+  --muted: #76817e;
+  --line: #e6eeeb;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  color: #172321;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #fff;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+button,
+input,
+select {
+  font: inherit;
+}
+.container {
+  width: min(1120px, calc(100% - 40px));
+  margin: auto;
+}
+.nav {
+  height: 78px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.page-nav {
+  position: relative;
+  background: #fff;
+  border-bottom: 1px solid var(--line);
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 22px;
+  font-weight: 900;
+  letter-spacing: -1px;
+  color: var(--deep);
+}
+.brand-mark {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  background: var(--green);
+  color: #fff;
+  font-size: 21px;
+  font-style: italic;
+}
+.brand-accent {
+  color: var(--green);
+}
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  color: #5d6c68;
+  font-size: 14px;
+  font-weight: 700;
+}
+.nav-links a.active {
+  color: var(--green);
+}
+.btn {
+  display: inline-block;
+  border: 0;
+  border-radius: 9px;
+  padding: 13px 21px;
+  font-weight: 800;
+  cursor: pointer;
+}
+.btn-primary {
+  background: var(--green);
+  color: #fff;
+}
+.btn-outline {
+  background: transparent;
+  border: 1px solid var(--green);
+  color: var(--green);
+  padding: 10px 20px;
+}
+.nav-toggle {
+  display: none;
+  background: none;
+  border: 0;
+}
+.nav-toggle span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  margin: 3px;
+  background: var(--deep);
+}
+.page-shell {
+  background: #f7faf9;
+  min-height: 100vh;
+  padding: 120px 0 80px;
+}
+.page-title {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+.page-title h1 {
+  font-size: 40px;
+  color: var(--deep);
+  margin: 0;
+}
+.page-title p {
+  color: var(--muted);
+  margin: 9px 0 0;
+}
+.booking-panel {
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 12px 35px #1e594416;
+  padding: 21px 25px;
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+.panel-heading {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 260px;
+}
+.panel-icon {
+  display: grid;
+  place-items: center;
+  background: #e5f8f0;
+  color: var(--green);
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  font-size: 23px;
+}
+.panel-heading strong,
+.panel-heading small {
+  display: block;
+}
+.panel-heading small {
+  font-size: 11px;
+  color: var(--muted);
+  margin-top: 3px;
+}
+.search-field {
+  height: 45px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 0 14px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  flex: 1;
+  color: var(--muted);
+}
+.search-field input {
+  border: 0;
+  outline: 0;
+  width: 100%;
+  font-size: 12px;
+}
+.search-button {
+  padding: 13px 28px;
+}
+.filter-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+.filter {
+  border: 1px solid var(--line);
+  background: #fff;
+  color: #71807c;
+  border-radius: 20px;
+  padding: 8px 18px;
+  font-size: 12px;
+  font-weight: 800;
+  cursor: pointer;
+}
+.filter.active,
+.filter:hover {
+  background: var(--green);
+  border-color: var(--green);
+  color: #fff;
+}
+.court-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.court-card,
+.page-card {
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 13px;
+  background: #fff;
+}
+.court-image {
+  height: 185px;
+  position: relative;
+  background: linear-gradient(135deg, #496f4d, #aec866 50%, #315846);
+}
+.image-badminton {
+  background: linear-gradient(135deg, #6b5745, #dbb06a 50%, #506c61);
+}
+.image-basket {
+  background: linear-gradient(135deg, #bf7650, #edb979 50%, #6a463d);
+}
+.badge {
+  position: absolute;
+  top: 13px;
+  left: 13px;
+  background: #ffffffde;
+  color: var(--green);
+  font-size: 10px;
+  font-weight: 900;
+  padding: 6px 11px;
+  border-radius: 15px;
+}
+.heart {
+  position: absolute;
+  top: 11px;
+  right: 12px;
+  border: 0;
+  background: #fff;
+  border-radius: 50%;
+  font-size: 20px;
+  cursor: pointer;
+}
+.court-info,
+.court-bottom {
+  display: flex;
+  justify-content: space-between;
+  padding: 17px;
+}
+.court-info h3 {
+  font-size: 16px;
+  margin: 0 0 4px;
+}
+.court-info p,
+.rating {
+  font-size: 11px;
+  color: var(--muted);
+  margin: 0;
+}
+.court-bottom {
+  align-items: center;
+  padding-top: 0;
+}
+.book-btn {
+  border: 0;
+  background: #e4f8ef;
+  color: var(--green);
+  font-weight: 900;
+  font-size: 11px;
+  padding: 9px 14px;
+  border-radius: 7px;
+}
+.auth-shell {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #e5f8f0, #f8fcfa);
+  display: grid;
+  place-items: center;
+  padding: 25px;
+}
+.auth-card {
+  width: min(430px, 100%);
+  background: #fff;
+  padding: 36px;
+  border-radius: 16px;
+  box-shadow: 0 18px 50px #164f3920;
+}
+.auth-card h1 {
+  color: var(--deep);
+  font-size: 28px;
+  margin: 30px 0 8px;
+}
+.auth-card > p,
+.auth-footer {
+  color: var(--muted);
+  font-size: 13px;
+}
+.auth-card label {
+  display: block;
+  font-size: 12px;
+  color: var(--deep);
+  font-weight: 900;
+  margin: 15px 0;
+}
+.auth-card input {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  margin-top: 6px;
+}
+.auth-card .btn {
+  width: 100%;
+  margin-top: 7px;
+}
+.auth-footer {
+  text-align: center;
+  margin-top: 22px;
+}
+.auth-footer a {
+  color: var(--green);
+  font-weight: 900;
+}
+@media (max-width: 760px) {
+  .nav-toggle {
+    display: block;
+  }
+  .nav-links {
+    display: none;
+  }
+  .booking-panel {
+    flex-wrap: wrap;
+  }
+  .panel-heading {
+    width: 100%;
+  }
+  .search-field {
+    min-width: 180px;
+  }
+  .court-grid {
+    grid-template-columns: 1fr;
+  }
+  .page-title {
+    display: block;
+  }
+  .page-title .btn {
+    margin-top: 20px;
+  }
+}

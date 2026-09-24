@@ -1,0 +1,127 @@
+﻿<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Semua Lapangan — Warrior Sport</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="pages.css" />
+  </head>
+  <body>
+    <header class="page-nav">
+      <nav class="nav container">
+        <a class="brand" href="index.html"
+          ><span class="brand-mark">W</span
+          ><span>warrior<span class="brand-accent">sport</span></span></a
+        ><button class="nav-toggle" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+        <div class="nav-links">
+          <a href="index.html">Beranda</a
+          ><a class="active" href="lapangan.html">Lapangan</a
+          ><a href="riwayat-pesanan.html">Pesanan</a
+          ><a href="profile.html">Profil</a
+          ><a class="btn btn-outline" href="login.html">Masuk</a>
+        </div>
+      </nav>
+    </header>
+    <main class="page-shell">
+      <div class="container">
+        <div class="page-title">
+          <div>
+            <span class="eyebrow">Temukan tempat bermain</span>
+            <h1>Semua lapangan</h1>
+            <p>Pilih lapangan favoritmu, atur jadwal, lalu langsung bermain.</p>
+          </div>
+          <a class="btn btn-primary" href="index.html#lapangan"
+            >Cari berdasarkan lokasi</a
+          >
+        </div>
+        <div class="booking-panel" style="margin: 0 0 30px">
+          <div class="panel-heading">
+            <span class="panel-icon">⌕</span>
+            <div>
+              <strong>Cari lapangan</strong
+              ><small>Nama, lokasi, atau jenis olahraga</small>
+            </div>
+          </div>
+          <label class="search-field"
+            ><span>⌕</span
+            ><input id="search" placeholder="Contoh: futsal Jakarta" /></label
+          ><button class="btn btn-primary" id="searchButton">Cari</button>
+        </div>
+        <div class="filter-row">
+          <button class="filter active" data-filter="all">Semua</button
+          ><button class="filter" data-filter="futsal">Futsal</button
+          ><button class="filter" data-filter="badminton">Badminton</button
+          ><button class="filter" data-filter="basket">Basket</button
+          ><button class="filter" data-filter="tenis">Tenis</button>
+        </div>
+        <div class="court-grid">
+          <article
+            class="court-card"
+            data-sport="futsal"
+            data-name="Warrior Futsal Arena"
+          >
+            <div class="court-image image-futsal">
+              <span class="badge">Futsal</span><button class="heart">♡</button>
+            </div>
+            <div class="court-info">
+              <div>
+                <h3>Warrior Futsal Arena</h3>
+                <p>Jl. Raya Sport No. 12 · 1.2 km</p>
+              </div>
+              <div class="rating">★ 4.9</div>
+            </div>
+            <div class="court-bottom">
+              <strong>Rp150.000 <small>/ jam</small></strong
+              ><a class="book-btn" href="detail.html">Lihat detail</a>
+            </div>
+          </article>
+          <article
+            class="court-card"
+            data-sport="badminton"
+            data-name="Warrior Badminton Hall"
+          >
+            <div class="court-image image-badminton">
+              <span class="badge">Badminton</span
+              ><button class="heart">♡</button>
+            </div>
+            <div class="court-info">
+              <div>
+                <h3>Warrior Badminton Hall</h3>
+                <p>Jl. Merdeka Selatan · 2.4 km</p>
+              </div>
+              <div class="rating">★ 4.8</div>
+            </div>
+            <div class="court-bottom">
+              <strong>Rp80.000 <small>/ jam</small></strong
+              ><a class="book-btn" href="detail.html">Lihat detail</a>
+            </div>
+          </article>
+          <article
+            class="court-card"
+            data-sport="basket"
+            data-name="Warrior Basketball Court"
+          >
+            <div class="court-image image-basket">
+              <span class="badge">Basket</span><button class="heart">♡</button>
+            </div>
+            <div class="court-info">
+              <div>
+                <h3>Warrior Basketball Court</h3>
+                <p>Komplek Griya Atlet · 3.1 km</p>
+              </div>
+              <div class="rating">★ 4.7</div>
+            </div>
+            <div class="court-bottom">
+              <strong>Rp200.000 <small>/ jam</small></strong
+              ><a class="book-btn" href="detail.html">Lihat detail</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>

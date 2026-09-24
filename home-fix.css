@@ -1,0 +1,152 @@
+.booking-panel {
+  display: block;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  flex: none;
+  margin: 0 auto;
+  padding: 42px 0 48px;
+  background: #536872;
+  box-shadow: none;
+}
+.booking-panel:before {
+  content: "";
+  position: absolute;
+  inset: -28px;
+  background:
+    linear-gradient(#526b7799, #6b747899),
+    url("https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&w=900&q=80")
+      center/cover;
+  filter: blur(8px);
+  z-index: -2;
+}
+.booking-panel:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #53687266;
+  z-index: -1;
+}
+.booking-panel-title {
+  position: relative;
+  margin: 0 0 26px;
+  text-align: center;
+  color: #fff;
+  font:
+    800 25px/1.6 Poppins,
+    Arial,
+    sans-serif;
+  text-shadow: 0 3px 2px #304452;
+}
+.booking-panel-inner {
+  max-width: 370px;
+}
+.hero {
+  min-height: 620px;
+}
+.section {
+  padding-top: 70px;
+}
+@media (max-width: 760px) {
+  .hero {
+    min-height: 640px;
+  }
+  .booking-panel {
+    padding: 36px 0 44px;
+  }
+  .booking-panel-inner {
+    width: calc(100% - 30px);
+  }
+  .booking-panel-title {
+    font-size: 25px;
+    line-height: 1.6;
+  }
+  .section {
+    padding-top: 55px;
+  }
+}
+.hero {
+  background: linear-gradient(117deg, #e9f0fb, #f8fbff 58%, #dce8f7);
+}
+.hero .eyebrow,
+.section .eyebrow {
+  color: #17439c;
+}
+.hero h1 span {
+  color: #17439c;
+}
+.hero .btn-primary,
+.booking-panel .btn-primary {
+  background: #173d98;
+  box-shadow: 0 10px 22px #173d9838;
+}
+.hero .text-link {
+  color: #092f78;
+}
+.hero-stats strong {
+  color: #092f78;
+}
+.site-header .brand-mark,
+.footer .brand-mark {
+  background: #173d98;
+}
+.site-header .brand-accent,
+.footer .brand-accent {
+  color: #173d98;
+}
+.booking-panel:before {
+  background:
+    linear-gradient(#344d6299, #536b7d99),
+    url("https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&w=900&q=80")
+      center/cover;
+}
+.booking-panel:after {
+  background: #344d6270;
+}
+.booking-panel-inner {
+  border-color: #173d98;
+}
+.booking-panel h2 {
+  color: #092f78;
+}
+.booking-panel select,
+.booking-panel input {
+  border-color: #173d98;
+}
+.section .text-link {
+  color: #092f78;
+}
+.benefits {
+  background: #eef4fb;
+}
+.benefit-icon.green {
+  background: #dce8fa;
+  color: #173d98;
+}
+.benefit-icon.orange {
+  background: #e5edfb;
+  color: #3159a6;
+}
+.benefit-icon.blue {
+  background: #dce8fa;
+  color: #173d98;
+}
+.cta {
+  background: #173d98;
+}
+.cta .eyebrow {
+  color: #c9d8ff;
+}
+:root {
+  --green: #173d98;
+  --deep: #092f78;
+  --pale: #eef4fb;
+  --line: #d8e2f1;
+}
+.rating {
+  color: #173d98;
+}
+.book-btn {
+  background: #e2ebfb;
+  color: #173d98;
+}

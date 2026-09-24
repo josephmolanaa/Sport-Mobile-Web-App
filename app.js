@@ -1,0 +1,17 @@
+﻿const $ = (selector, root = document) => root.querySelector(selector);
+const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
+const toast = message => { const node = $('#toast'); if (!node) return; node.textContent = message; node.classList.add('show'); setTimeout(() => node.classList.remove('show'), 2600); };
+const backdrop = $('#modalBackdrop');
+const closeModal = () => backdrop?.classList.remove('show');
+$('.nav-toggle')?.addEventListener('click', event => { const open = $('.nav-links')?.classList.toggle('show'); event.currentTarget.setAttribute('aria-expanded', open); });
+$$('.nav-links a').forEach(link => link.addEventListener('click', () => $('.nav-links')?.classList.remove('show')));
+$$('.filter').forEach(button => button.addEventListener('click', () => { $$('.filter').forEach(item => item.classList.remove('active')); button.classList.add('active'); const filter = button.dataset.filter; $$('.court-card').forEach(card => card.hidden = filter !== 'all' && card.dataset.sport !== filter); }));
+$$('.heart').forEach(button => button.addEventListener('click', () => { button.classList.toggle('saved'); button.textContent = button.classList.contains('saved') ? '♥' : '♡'; toast(button.classList.contains('saved') ? 'Lapangan disimpan.' : 'Lapangan dihapus dari simpanan.'); }));
+const openBooking = name => { if (!backdrop) return; $('#modalTitle').textContent = 'Pesan lapangan'; $('#modalText').textContent = `${name} — pilih jadwal bermainmu.`; $('#bookingForm').dataset.court = name; backdrop.classList.add('show'); };
+$$('.book-btn').forEach(button => button.addEventListener('click', () => openBooking(button.dataset.court)));
+$('.modal-close')?.addEventListener('click', closeModal);
+backdrop?.addEventListener('click', event => { if (event.target === backdrop) closeModal(); });
+$('#bookingForm')?.addEventListener('submit', event => { event.preventDefault(); closeModal(); toast('Berhasil ditambahkan ke pesanan.'); });
+$('#searchButton')?.addEventListener('click', () => { const query = $('#search').value.trim().toLowerCase(); if (!query) return toast('Masukkan nama lapangan atau lokasi.'); const cards = $$('.court-card'); let count = 0; cards.forEach(card => { const match = card.dataset.name.toLowerCase().includes(query); card.hidden = !match; if (match) count++; }); toast(count ? `${count} lapangan ditemukan.` : 'Lapangan tidak ditemukan.'); });
+$('.login-open')?.addEventListener('click', () => { if (backdrop) backdrop.classList.add('show'); });
+$$('[data-toast]').forEach(node => node.addEventListener('click', () => toast(node.dataset.toast)));
