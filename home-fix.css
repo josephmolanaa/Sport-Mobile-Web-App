@@ -117,7 +117,7 @@ main,
   color: #c4000d;
 }
 .benefits {
-  background: #fffafa;
+  background: #ffffff;
 }
 .benefit-icon.green {
   background: #fff0f1;
@@ -140,7 +140,7 @@ main,
 :root {
   --green: #e6000f;
   --deep: #1a1a1a;
-  --pale: #fffafa;
+  --pale: #ffffff;
   --line: #fcd5d7;
 }
 .rating {
