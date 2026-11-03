@@ -3,7 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Warrior Futsal Arena — Warrior Sport</title>
+    <title>Detail Lapangan | CourtGo</title>
+    <link rel="icon" type="image/png" href="logo.png" />
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="pages.css" />
   </head>
@@ -11,13 +12,12 @@
     <header class="page-nav">
       <nav class="nav container">
         <a class="brand" href="index.html"
-          ><span class="brand-mark">W</span
-          ><span>warrior<span class="brand-accent">sport</span></span></a
-        ><button class="nav-toggle" aria-label="Buka menu" aria-expanded="false">
+          ><img class="brand-logo" src="logo.png" alt="SM Futsal Malang"
+        /></a><button class="nav-toggle" aria-label="Buka menu" aria-expanded="false">
           <span></span><span></span><span></span>
         </button>
         <div class="nav-links">
-          <a href="lapangan.html">Lapangan</a
+          <a href="index.html#lapangan">Lapangan</a
           ><a href="riwayat-pesanan.html">Pesanan</a
           ><a href="profile.html">Profil</a
           ><a class="btn btn-outline" href="login.html">Masuk</a>
@@ -26,24 +26,41 @@
     </header>
     <main class="page-shell">
       <div class="container">
-        <a class="text-link" href="lapangan.html"
-          >← Kembali ke daftar lapangan</a
-        >
-        <div class="page-grid" style="margin-top: 20px">
+        <a class="btn-back" href="index.html#lapangan">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="m15 18-6-6 6-6"/>
+          </svg>
+          <span>Kembali ke daftar lapangan</span>
+        </a>
+        <div class="page-grid">
           <section class="page-card">
-            <div class="detail-cover"><span class="badge">Futsal</span></div>
+            <div class="detail-cover" id="courtCover"><span class="badge" id="courtBadge">Sintetis</span></div>
             <div class="detail-info">
-              <h1>Warrior Futsal Arena</h1>
-              <p>★ 4.9 (128 ulasan) · Jl. Raya Sport No. 12 · 1.2 km</p>
+              <h1 id="courtTitle">Lapangan Futsal 1</h1>
+              <p>★ 4.9 (128 ulasan) · JL. Sudimoro Utara, Malang</p>
               <div class="chips">
                 <span class="chip">Parkir luas</span
                 ><span class="chip">Kamar mandi</span
                 ><span class="chip">Wi-Fi gratis</span
                 ><span class="chip">Lampu LED</span>
               </div>
-              <h3>Pilih tanggal dan jam</h3>
+
+              <!-- Pricelist Box -->
+              <div style="background: #fff0f1; border-radius: 8px; padding: 12px 16px; margin: 16px 0; border-left: 4px solid var(--green);">
+                <div style="font-weight: 700; color: #1a1a1a; margin-bottom: 6px; font-size: 13px;">Tarif Lapangan:</div>
+                <div style="display: flex; gap: 14px; flex-wrap: wrap; font-size: 12px;" id="courtRatesDisplay">
+                  <span>Pagi: <b style="color: var(--green);">Rp85.000</b></span>
+                  <span>Malam: <b style="color: var(--green);">Rp140.000</b></span>
+                  <span>Minggu / Libur: <b style="color: var(--green);">Rp110.000</b></span>
+                </div>
+              </div>
+
+              <h3>Pilih tanggal dan jam main</h3>
+              <p style="font-size: 12px; color: var(--muted); margin: 4px 0 12px;">💡 <b>Booking 2 jam atau lebih:</b> Klik jam yang berurutan (bersebelahan) untuk menambah durasi.</p>
               <input
+                id="bookingDateInput"
                 type="date"
+                value="2026-09-24"
                 style="
                   padding: 12px;
                   border: 1px solid var(--line);
@@ -51,34 +68,291 @@
                   width: 100%;
                 "
               />
-              <div class="schedule">
-                <button class="slot">08:00<br />Rp150k</button
-                ><button class="slot selected">10:00<br />Rp150k</button
-                ><button class="slot">16:00<br />Rp175k</button
-                ><button class="slot">19:00<br />Rp200k</button>
+              <div class="schedule" id="scheduleSlots">
+                <!-- Pagi: 08:00 - 15:00 -->
+                <button class="slot" data-slot="08:00 - 09:00" data-session="pagi">08:00 - 09:00<br /><span class="slot-price">Rp85k</span></button>
+                <button class="slot" data-slot="09:00 - 10:00" data-session="pagi">09:00 - 10:00<br /><span class="slot-price">Rp85k</span></button>
+                <button class="slot selected" data-slot="10:00 - 11:00" data-session="pagi">10:00 - 11:00<br /><span class="slot-price">Rp85k</span></button>
+                <button class="slot" data-slot="11:00 - 12:00" data-session="pagi">11:00 - 12:00<br /><span class="slot-price">Rp85k</span></button>
+                <button class="slot" data-slot="12:00 - 13:00" data-session="pagi">12:00 - 13:00<br /><span class="slot-price">Rp85k</span></button>
+                <button class="slot" data-slot="13:00 - 14:00" data-session="pagi">13:00 - 14:00<br /><span class="slot-price">Rp85k</span></button>
+                <button class="slot" data-slot="14:00 - 15:00" data-session="pagi">14:00 - 15:00<br /><span class="slot-price">Rp85k</span></button>
+                <!-- Malam: 15:00 - 23:00 -->
+                <button class="slot" data-slot="15:00 - 16:00" data-session="malam">15:00 - 16:00<br /><span class="slot-price">Rp140k</span></button>
+                <button class="slot" data-slot="16:00 - 17:00" data-session="malam">16:00 - 17:00<br /><span class="slot-price">Rp140k</span></button>
+                <button class="slot" data-slot="17:00 - 18:00" data-session="malam">17:00 - 18:00<br /><span class="slot-price">Rp140k</span></button>
+                <button class="slot" data-slot="18:00 - 19:00" data-session="malam">18:00 - 19:00<br /><span class="slot-price">Rp140k</span></button>
+                <button class="slot" data-slot="19:00 - 20:00" data-session="malam">19:00 - 20:00<br /><span class="slot-price">Rp140k</span></button>
+                <button class="slot" data-slot="20:00 - 21:00" data-session="malam">20:00 - 21:00<br /><span class="slot-price">Rp140k</span></button>
+                <button class="slot" data-slot="21:00 - 22:00" data-session="malam">21:00 - 22:00<br /><span class="slot-price">Rp140k</span></button>
+                <button class="slot" data-slot="22:00 - 23:00" data-session="malam">22:00 - 23:00<br /><span class="slot-price">Rp140k</span></button>
               </div>
-              <p>
-                Lapangan indoor dengan rumput sintetis premium, cocok untuk
-                kompetisi maupun fun match.
+              <p id="courtDesc">
+                Lapangan indoor berkualitas standar, nyaman untuk kompetisi maupun latihan rutin bersama tim.
               </p>
             </div>
           </section>
           <aside class="page-card summary">
             <h2>Ringkasan pesanan</h2>
             <div class="summary-row">
-              <span>Lapangan</span><b>Warrior Futsal Arena</b>
+              <span>Lapangan</span><b id="summaryCourt">Lapangan Futsal 1</b>
             </div>
-            <div class="summary-row"><span>Tanggal</span><b>Hari ini</b></div>
-            <div class="summary-row"><span>Durasi</span><b>1 jam</b></div>
+            <div class="summary-row"><span>Tanggal</span><b id="summaryDate">24 Sep 2026</b></div>
+            <div class="summary-row"><span>Waktu</span><b id="summarySlot">10:00 - 11:00</b></div>
+            <div class="summary-row"><span>Durasi</span><b id="summaryDuration">1 jam</b></div>
             <div class="summary-row total">
-              <span>Total</span><strong>Rp150.000</strong>
+              <span>Total</span><strong id="summaryTotal">Rp85.000</strong>
             </div>
-            <a class="btn btn-primary full-btn" href="pembayaran.html"
-              >Lanjut pembayaran →</a
-            >
+            <a class="btn-checkout" id="payButton" href="pembayaran.html">
+              <div class="btn-checkout-content">
+                <span class="btn-checkout-title">Lanjut ke Pembayaran</span>
+                <span class="btn-checkout-sub" id="payBtnSubtext">1 jam terpilih</span>
+              </div>
+              <div class="btn-checkout-arrow">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </div>
+            </a>
           </aside>
         </div>
       </div>
     </main>
+    <script src="app.js"></script>
+    <script>
+      const courtPrices = {
+        gor: {
+          name: 'Lapangan GOR Besar',
+          badge: 'GOR Besar',
+          pagi: 210000,
+          malam: 310000,
+          libur: 260000,
+          image: 'https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&w=800&q=80',
+          desc: 'Lapangan GOR besar standar turnamen dengan tribun penonton dan pencahayaan pro LED.'
+        },
+        '3': {
+          name: 'Lapangan Futsal 3',
+          badge: 'Vinyl',
+          pagi: 125000,
+          malam: 205000,
+          libur: 155000,
+          image: 'https://images.unsplash.com/photo-1518091043644-c1d4457512c6?auto=format&fit=crop&w=800&q=80',
+          desc: 'Lantai vinyl pro elastis standar futsal internasional, nyaman untuk grip dan pergerakan lincah.'
+        },
+        '4': {
+          name: 'Lapangan Futsal 4',
+          badge: 'Vinyl',
+          pagi: 125000,
+          malam: 205000,
+          libur: 155000,
+          image: 'https://images.unsplash.com/photo-1560272564-c83b66b1ad12?auto=format&fit=crop&w=800&q=80',
+          desc: 'Lantai vinyl pro elastis standar futsal internasional, nyaman untuk grip dan pergerakan lincah.'
+        },
+        '11': {
+          name: 'Lapangan Futsal 11',
+          badge: 'Besar',
+          pagi: 105000,
+          malam: 155000,
+          libur: 130000,
+          image: 'https://images.unsplash.com/photo-1575361204480-aadea25e6e68?auto=format&fit=crop&w=800&q=80',
+          desc: 'Lantai interlock modular berkualitas tinggi dengan pantulan bola yang stabil dan presisi.'
+        },
+        '12': {
+          name: 'Lapangan Futsal 12',
+          badge: 'Besar',
+          pagi: 105000,
+          malam: 155000,
+          libur: 130000,
+          image: 'https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?auto=format&fit=crop&w=800&q=80',
+          desc: 'Lantai interlock modular berkualitas tinggi dengan pantulan bola yang stabil dan presisi.'
+        },
+        '1': {
+          name: 'Lapangan Futsal 1',
+          badge: 'Sintetis',
+          pagi: 85000,
+          malam: 140000,
+          libur: 110000,
+          image: 'https://images.unsplash.com/photo-1529900748604-07564a03e7a6?auto=format&fit=crop&w=800&q=80',
+          desc: 'Rumput sintetis halus dengan rubber infill empuk dan jaring pengaman keliling.'
+        },
+        '2': {
+          name: 'Lapangan Futsal 2',
+          badge: 'Sintetis',
+          pagi: 85000,
+          malam: 140000,
+          libur: 110000,
+          image: 'https://images.unsplash.com/photo-1551958219-acbc608c6377?auto=format&fit=crop&w=800&q=80',
+          desc: 'Rumput sintetis halus dengan rubber infill empuk dan jaring pengaman keliling.'
+        },
+        '6': {
+          name: 'Lapangan Futsal 6',
+          badge: 'Sintetis',
+          pagi: 85000,
+          malam: 140000,
+          libur: 110000,
+          image: 'https://images.unsplash.com/photo-1543326727-cf6c39e8f84c?auto=format&fit=crop&w=800&q=80',
+          desc: 'Rumput sintetis halus dengan rubber infill empuk dan jaring pengaman keliling.'
+        },
+        '7': {
+          name: 'Lapangan Futsal 7',
+          badge: 'Sintetis',
+          pagi: 85000,
+          malam: 140000,
+          libur: 110000,
+          image: 'https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=800&q=80',
+          desc: 'Rumput sintetis halus dengan rubber infill empuk dan jaring pengaman keliling.'
+        },
+        '8': {
+          name: 'Lapangan Futsal 8',
+          badge: 'Sintetis',
+          pagi: 85000,
+          malam: 140000,
+          libur: 110000,
+          image: 'https://images.unsplash.com/photo-1577223625816-7546f13df25d?auto=format&fit=crop&w=800&q=80',
+          desc: 'Rumput sintetis halus dengan rubber infill empuk dan jaring pengaman keliling.'
+        },
+        '10': {
+          name: 'Lapangan Futsal 10',
+          badge: 'Sintetis',
+          pagi: 85000,
+          malam: 140000,
+          libur: 110000,
+          image: 'https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=800&q=80',
+          desc: 'Rumput sintetis halus dengan rubber infill empuk dan jaring pengaman keliling.'
+        }
+      };
+
+      const params = new URLSearchParams(window.location.search);
+      const courtKey = params.get('court') || '1';
+      const court = courtPrices[courtKey] || courtPrices['1'];
+
+      document.getElementById('courtTitle').textContent = court.name;
+      document.getElementById('courtBadge').textContent = court.badge;
+      document.getElementById('courtDesc').textContent = court.desc;
+      document.getElementById('summaryCourt').textContent = court.name;
+
+      const coverEl = document.getElementById('courtCover');
+      if (coverEl && court.image) {
+        coverEl.style.backgroundImage = `url("${court.image}")`;
+      }
+
+      const formatRp = (num) => 'Rp' + num.toLocaleString('id-ID');
+      const formatK = (num) => 'Rp' + (num / 1000) + 'k';
+
+      function getSlots() {
+        return Array.from(document.querySelectorAll('#scheduleSlots .slot'));
+      }
+
+      function updatePrices() {
+        const dateVal = document.getElementById('bookingDateInput').value;
+        const dateObj = new Date(dateVal);
+        const isSunday = dateObj.getDay() === 0;
+
+        document.getElementById('courtRatesDisplay').innerHTML = `
+          <span>Pagi: <b style="color: var(--green);">${formatRp(court.pagi)}</b></span>
+          <span>Malam: <b style="color: var(--green);">${formatRp(court.malam)}</b></span>
+          <span>Minggu / Libur: <b style="color: var(--green);">${formatRp(court.libur)}</b></span>
+        `;
+
+        const slots = getSlots();
+        slots.forEach(btn => {
+          const session = btn.getAttribute('data-session');
+          let price = isSunday ? court.libur : (session === 'pagi' ? court.pagi : court.malam);
+          btn.querySelector('.slot-price').textContent = formatK(price);
+          btn.setAttribute('data-price', price);
+        });
+
+        let selectedBtns = slots.filter(btn => btn.classList.contains('selected'));
+        if (selectedBtns.length === 0) {
+          const defaultBtn = slots[2] || slots[0];
+          if (defaultBtn) {
+            defaultBtn.classList.add('selected');
+            selectedBtns.push(defaultBtn);
+          }
+        }
+
+        let totalPrice = 0;
+        selectedBtns.forEach(btn => {
+          totalPrice += parseInt(btn.getAttribute('data-price') || '0', 10);
+        });
+
+        const durationHours = selectedBtns.length;
+        const durationText = `${durationHours} jam`;
+
+        const firstSlot = selectedBtns[0].getAttribute('data-slot') || '';
+        const lastSlot = selectedBtns[selectedBtns.length - 1].getAttribute('data-slot') || '';
+        const startTime = firstSlot.split(' - ')[0] || '';
+        const endTime = lastSlot.split(' - ')[1] || '';
+        const slotSummaryText = `${startTime} - ${endTime}`;
+
+        document.getElementById('summarySlot').textContent = slotSummaryText;
+        document.getElementById('summaryDuration').textContent = durationText;
+        document.getElementById('summaryTotal').textContent = formatRp(totalPrice);
+        document.getElementById('summaryDate').textContent = dateVal;
+
+        const subtextEl = document.getElementById('payBtnSubtext');
+        if (subtextEl) {
+          subtextEl.textContent = `${durationHours} jam terpilih · ${formatRp(totalPrice)}`;
+        }
+
+        const payUrl = `pembayaran.html?court=${encodeURIComponent(court.name)}&slot=${encodeURIComponent(slotSummaryText)}&duration=${durationHours}&date=${encodeURIComponent(dateVal)}&price=${totalPrice}`;
+        document.getElementById('payButton').setAttribute('href', payUrl);
+      }
+
+      function handleSlotClick(clickedBtn) {
+        const slots = getSlots();
+        const clickedIdx = slots.indexOf(clickedBtn);
+        if (clickedIdx === -1) return;
+
+        const selectedIndices = [];
+        slots.forEach((btn, idx) => {
+          if (btn.classList.contains('selected')) selectedIndices.push(idx);
+        });
+
+        if (selectedIndices.length <= 1 && selectedIndices.includes(clickedIdx)) {
+          return; // Minimal 1 slot aktif
+        }
+
+        if (selectedIndices.length === 1) {
+          const currentIdx = selectedIndices[0];
+          if (Math.abs(clickedIdx - currentIdx) === 1) {
+            const min = Math.min(currentIdx, clickedIdx);
+            const max = Math.max(currentIdx, clickedIdx);
+            slots.forEach((btn, idx) => {
+              btn.classList.toggle('selected', idx >= min && idx <= max);
+            });
+          } else {
+            slots.forEach((btn, idx) => {
+              btn.classList.toggle('selected', idx === clickedIdx);
+            });
+          }
+        } else {
+          const min = selectedIndices[0];
+          const max = selectedIndices[selectedIndices.length - 1];
+
+          if (clickedIdx === min - 1) {
+            slots[clickedIdx].classList.add('selected');
+          } else if (clickedIdx === max + 1) {
+            slots[clickedIdx].classList.add('selected');
+          } else if (clickedIdx === min) {
+            slots[min].classList.remove('selected');
+          } else if (clickedIdx === max) {
+            slots[max].classList.remove('selected');
+          } else {
+            slots.forEach((btn, idx) => {
+              btn.classList.toggle('selected', idx === clickedIdx);
+            });
+          }
+        }
+        updatePrices();
+      }
+
+      document.querySelectorAll('#scheduleSlots .slot').forEach(btn => {
+        btn.addEventListener('click', () => handleSlotClick(btn));
+      });
+
+      document.getElementById('bookingDateInput').addEventListener('change', updatePrices);
+      updatePrices();
+    </script>
   </body>
 </html>

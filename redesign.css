@@ -3,7 +3,7 @@ html {
 }
 body {
   font-family: Poppins, Arial, sans-serif;
-  background: #f6f9fd;
+  background: #fffafa;
 }
 .skip-link {
   position: fixed;
@@ -12,7 +12,7 @@ body {
   left: 12px;
   padding: 9px 13px;
   border-radius: 7px;
-  background: #092f78;
+  background: #e6000f;
   color: #fff;
   transform: translateY(-150%);
   transition: transform 0.2s ease;
@@ -39,13 +39,13 @@ body {
 .heart:focus-visible,
 .booking-panel select:focus-visible,
 .booking-panel input:focus-visible {
-  outline: 3px solid #9dbaff;
+  outline: 3px solid #ffb3b8;
   outline-offset: 3px;
 }
 .btn:hover,
 .book-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 9px 18px #092f7830;
+  box-shadow: 0 9px 18px #e6000f30;
 }
 .btn:active,
 .book-btn:active,
@@ -70,25 +70,45 @@ body {
 .booking-panel {
   box-shadow:
     inset 0 1px #ffffff42,
-    inset 0 -1px #092f7833;
+    inset 0 -1px #e6000f22;
 }
 .booking-panel-inner {
   box-shadow:
-    0 18px 40px #092f7830,
+    0 18px 40px #e6000f18,
     inset 0 1px #ffffff;
 }
 .court-card {
-  border-color: #d8e2f1;
-  box-shadow: 0 8px 22px #092f780b;
+  border-color: #fcd5d7;
+  box-shadow: 0 8px 22px #e6000f0a;
+}
+.court-image {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.court-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.45) 100%);
+  border-radius: inherit;
+  pointer-events: none;
+}
+.court-image .badge {
+  z-index: 1;
+}
+.badge-kecil {
+  background: #fff1f2de !important;
+  color: #c4000d !important;
 }
 .court-card:hover {
-  box-shadow: 0 16px 30px #092f7820;
+  box-shadow: 0 16px 30px #e6000f1f;
 }
 .benefit {
   border-radius: 18px;
 }
 .footer {
-  border-top: 1px solid #d8e2f1;
+  border-top: 1px solid #fcd5d7;
 }
 
 @media (max-width: 760px) {
@@ -110,6 +130,12 @@ body {
     width: 30px;
     height: 30px;
     font-size: 18px;
+  }
+
+  .brand-logo {
+    height: 46px;
+    width: auto;
+    max-width: 200px;
   }
 
   .nav-toggle {
@@ -148,7 +174,7 @@ body {
     border: 1px solid var(--line);
     border-radius: 14px;
     background: #fff;
-    box-shadow: 0 16px 35px #092f7820;
+    box-shadow: 0 16px 35px #e6000f18;
   }
 
   .nav-links.show {
@@ -263,20 +289,6 @@ body {
   .hero-actions .btn {
     width: 100%;
     text-align: center;
-  }
-
-  .hero-stats {
-    gap: 18px;
-    flex-wrap: wrap;
-    margin-top: 34px;
-  }
-
-  .hero-art {
-    height: 250px;
-  }
-
-  .art-card {
-    max-width: 170px;
   }
 
   .footer-grid {

@@ -5,7 +5,7 @@ const backdrop = $('#modalBackdrop');
 const closeModal = () => backdrop?.classList.remove('show');
 $('.nav-toggle')?.addEventListener('click', event => { const open = $('.nav-links')?.classList.toggle('show'); event.currentTarget.setAttribute('aria-expanded', open); });
 $$('.nav-links a').forEach(link => link.addEventListener('click', () => $('.nav-links')?.classList.remove('show')));
-$$('.filter').forEach(button => button.addEventListener('click', () => { $$('.filter').forEach(item => item.classList.remove('active')); button.classList.add('active'); const filter = button.dataset.filter; $$('.court-card').forEach(card => card.hidden = filter !== 'all' && card.dataset.sport !== filter); }));
+$$('.filter').forEach(button => button.addEventListener('click', () => { $$('.filter').forEach(item => item.classList.remove('active')); button.classList.add('active'); const filter = button.dataset.filter; $$('.court-card').forEach(card => { const cat = card.dataset.category || card.dataset.sport; const isMatch = filter === 'all' || cat === filter; card.hidden = !isMatch; card.style.display = isMatch ? '' : 'none'; }); }));
 $$('.heart').forEach(button => button.addEventListener('click', () => { button.classList.toggle('saved'); button.textContent = button.classList.contains('saved') ? '♥' : '♡'; toast(button.classList.contains('saved') ? 'Lapangan disimpan.' : 'Lapangan dihapus dari simpanan.'); }));
 const openBooking = name => { if (!backdrop) return; $('#modalTitle').textContent = 'Pesan lapangan'; $('#modalText').textContent = `${name} — pilih jadwal bermainmu.`; $('#bookingForm').dataset.court = name; backdrop.classList.add('show'); };
 $$('.book-btn').forEach(button => button.addEventListener('click', () => openBooking(button.dataset.court)));

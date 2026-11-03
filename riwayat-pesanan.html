@@ -3,7 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Riwayat Pesanan — Warrior Sport</title>
+    <title>Riwayat Pesanan | CourtGo</title>
+    <link rel="icon" type="image/png" href="logo.png" />
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="pages.css" />
   </head>
@@ -11,13 +12,12 @@
     <header class="page-nav">
       <nav class="nav container">
         <a class="brand" href="index.html"
-          ><span class="brand-mark">W</span
-          ><span>warrior<span class="brand-accent">sport</span></span></a
-        ><button class="nav-toggle" aria-label="Buka menu" aria-expanded="false">
+          ><img class="brand-logo" src="logo.png" alt="SM Futsal Malang"
+        /></a><button class="nav-toggle" aria-label="Buka menu" aria-expanded="false">
           <span></span><span></span><span></span>
         </button>
         <div class="nav-links">
-          <a href="index.html">Beranda</a><a href="lapangan.html">Lapangan</a
+          <a href="index.html">Beranda</a><a href="index.html#lapangan">Lapangan</a
           ><a class="active" href="riwayat-pesanan.html">Pesanan</a
           ><a href="profile.html">Profil</a>
         </div>
@@ -31,7 +31,7 @@
             <h1>Riwayat pesanan</h1>
             <p>Kelola semua booking lapanganmu.</p>
           </div>
-          <a class="btn btn-primary" href="lapangan.html">Booking baru</a>
+          <a class="btn btn-primary" href="index.html#lapangan">Booking baru</a>
         </div>
         <section class="page-card table-wrap">
           <table class="orders">
@@ -47,21 +47,21 @@
             <tbody>
               <tr>
                 <td>
-                  <b>Warrior Futsal Arena</b><br /><small>Futsal · 1 jam</small>
+                  <b>CourtGo Futsal Arena 1</b><br /><small>Futsal · 1 jam</small>
                 </td>
                 <td>23 Sep 2026<br /><small>10:00 - 11:00</small></td>
-                <td>Rp150.000</td>
+                <td>Rp180.000</td>
                 <td><span class="status">Selesai</span></td>
                 <td><a class="text-link" href="detail.html">Detail</a></td>
               </tr>
               <tr>
                 <td>
-                  <b>Warrior Badminton Hall</b><br /><small
-                    >Badminton · 2 jam</small
+                  <b>CourtGo Futsal Arena 3</b><br /><small
+                    >Futsal · 2 jam</small
                   >
                 </td>
                 <td>28 Sep 2026<br /><small>16:00 - 18:00</small></td>
-                <td>Rp160.000</td>
+                <td>Rp240.000</td>
                 <td><span class="status pending">Menunggu pembayaran</span></td>
                 <td><a class="text-link" href="pembayaran.html">Bayar</a></td>
               </tr>
@@ -70,5 +70,6 @@
         </section>
       </div>
     </main>
+    <script src="app.js"></script>
   </body>
 </html>

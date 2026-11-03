@@ -5,9 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Booking lapangan olahraga Warrior Sport Indonesia dengan cepat dan mudah."
+      content="Booking lapangan olahraga CourtGo dengan cepat dan mudah."
     />
-    <title>Warrior Sport — Booking Lapangan</title>
+    <title>CourtGo | Booking Lapangan</title>
+    <link rel="icon" type="image/png" href="logo.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -25,14 +26,13 @@
     <header class="site-header" id="beranda">
       <nav class="nav container" aria-label="Navigasi utama">
         <a class="brand" href="#beranda"
-          ><span class="brand-mark">W</span
-          ><span>warrior<span class="brand-accent">sport</span></span></a
-        ><button class="nav-toggle" aria-label="Buka menu">
+          ><img class="brand-logo" src="logo.png" alt="SM Futsal Malang"
+        /></a><button class="nav-toggle" aria-label="Buka menu">
           <span></span><span></span><span></span>
         </button>
         <div class="nav-links">
           <a class="active" href="#beranda">Beranda</a
-          ><a href="lapangan.html">Lapangan</a
+          ><a href="#lapangan">Lapangan</a
           ><a href="#tentang">Tentang Kami</a><a href="#kontak">Kontak</a
           ><a class="btn btn-outline" href="login.html">Masuk</a>
         </div>
@@ -52,44 +52,26 @@
               <a class="btn btn-primary" href="#booking">Cari Lapangan →</a
               ><a class="text-link" href="#tentang">Pelajari lebih lanjut</a>
             </div>
-            <div class="hero-stats">
-              <div><strong>100+</strong><span>Lapangan tersedia</span></div>
-              <div><strong>10K+</strong><span>Pengguna aktif</span></div>
-              <div><strong>4.9</strong><span>Rating pengguna</span></div>
-            </div>
-          </div>
-          <div class="hero-art">
-            <div class="sun"></div>
-            <div class="player"></div>
-            <div class="art-card card-top">
-              ⚡ <b>Fast booking</b><small>Pesan dalam hitungan detik</small>
-            </div>
-            <div class="art-card card-bottom">
-              ✓ <b>Booking berhasil!</b
-              ><small>GOR Warrior Sport · Hari ini</small>
-            </div>
           </div>
         </div>
       </section>
       <section class="booking-panel container" id="booking">
-        <h2 class="booking-panel-title">Booking Lapangan<br />Semakin Mudah</h2>
         <div class="booking-panel-inner">
-          <h2>Warrior Sport<br />Indonesia</h2>
+          <h2>CourtGo</h2>
           <p>
             Tidak perlu lagi antre atau repot mencari jadwal. Ayo, nikmati
             kemudahan berolahraga dengan sistem booking online kami.
           </p>
           <form id="bookingForm">
-            <select required>
+            <select required id="locationSelect">
               <option value="">Pilih Lokasi</option>
-              <option>Jakarta</option>
-              <option>Bandung</option>
-              <option>Surabaya</option></select
-            ><select required>
-              <option value="">Pilih Kategori</option>
-              <option>Futsal</option>
-              <option>Badminton</option>
-              <option>Basket</option></select
+              <option value="sudimoro">JL. Sudimoro Utara</option></select
+            ><select required id="courtTypeSelect">
+              <option value="">Pilih Tipe Lapangan</option>
+              <option value="vinyl">Lapangan Vinyl</option>
+              <option value="besar">Lapangan Besar</option>
+              <option value="sintetis">Lapangan Sintetis</option>
+              <option value="gor">Lapangan GOR Besar</option></select
             ><input type="date" value="2026-09-23" required /><button
               class="btn btn-primary"
               type="submit"
@@ -103,63 +85,254 @@
         <div class="section-head">
           <div>
             <span class="eyebrow">Pilihan terbaik untukmu</span>
-            <h2>Lapangan populer</h2>
+            <h2>Daftar Lapangan Futsal</h2>
           </div>
-          <a class="text-link" href="lapangan.html">Lihat semua →</a>
+          <a class="text-link" href="#booking">Cari jadwal</a>
         </div>
         <div class="filter-row">
-          <button class="filter active">Semua</button
-          ><button class="filter">Futsal</button
-          ><button class="filter">Badminton</button
-          ><button class="filter">Basket</button>
+          <button class="filter active" data-filter="all">Semua (11)</button
+          ><button class="filter" data-filter="vinyl">Vinyl (2)</button
+          ><button class="filter" data-filter="besar">Besar (2)</button
+          ><button class="filter" data-filter="sintetis">Sintetis (6)</button
+          ><button class="filter" data-filter="gor">GOR Besar (1)</button>
         </div>
         <div class="court-grid">
-          <article class="court-card">
-            <div class="court-image image-futsal">
-              <span class="badge">Futsal</span>
+          <!-- GOR Besar (1) -->
+          <article class="court-card" data-category="gor">
+            <div class="court-image image-futsal" style="background-image: url('https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&w=800&q=80');">
+              <span class="badge">GOR Besar</span>
             </div>
             <div class="court-info">
               <div>
-                <h3>Warrior Futsal Arena</h3>
-                <p>Jl. Raya Sport No. 12 · 1.2 km</p>
+                <h3>Lapangan GOR Besar</h3>
+                <p>Standar Nasional · Tribun Penonton</p>
+                <div class="court-rates">
+                  <span>Pagi <b>Rp210k</b></span>
+                  <span>Malam <b>Rp310k</b></span>
+                  <span>Minggu/Libur <b>Rp260k</b></span>
+                </div>
+              </div>
+              <div class="rating">★ 5.0</div>
+            </div>
+            <div class="court-bottom">
+              <strong>Mulai Rp210.000 <small>/ jam</small></strong
+              ><a class="book-btn" href="detail.html?court=gor">Pesan</a>
+            </div>
+          </article>
+
+          <!-- Lapangan Vinyl (2): Lapangan 3 & 4 -->
+          <article class="court-card" data-category="vinyl">
+            <div class="court-image image-futsal" style="background-image: url('https://images.unsplash.com/photo-1518091043644-c1d4457512c6?auto=format&fit=crop&w=800&q=80');">
+              <span class="badge">Vinyl</span>
+            </div>
+            <div class="court-info">
+              <div>
+                <h3>Lapangan Futsal 3</h3>
+                <p>Vinyl Premium · 5 vs 5</p>
+                <div class="court-rates">
+                  <span>Pagi <b>Rp125k</b></span>
+                  <span>Malam <b>Rp205k</b></span>
+                  <span>Minggu/Libur <b>Rp155k</b></span>
+                </div>
               </div>
               <div class="rating">★ 4.9</div>
             </div>
             <div class="court-bottom">
-              <strong>Rp150.000 <small>/ jam</small></strong
-              ><a class="book-btn" href="detail.html">Pesan</a>
+              <strong>Mulai Rp125.000 <small>/ jam</small></strong
+              ><a class="book-btn" href="detail.html?court=3">Pesan</a>
             </div>
           </article>
-          <article class="court-card">
-            <div class="court-image image-badminton">
-              <span class="badge">Badminton</span>
+          <article class="court-card" data-category="vinyl">
+            <div class="court-image image-futsal" style="background-image: url('https://images.unsplash.com/photo-1560272564-c83b66b1ad12?auto=format&fit=crop&w=800&q=80');">
+              <span class="badge">Vinyl</span>
             </div>
             <div class="court-info">
               <div>
-                <h3>Warrior Badminton Hall</h3>
-                <p>Jl. Merdeka Selatan · 2.4 km</p>
+                <h3>Lapangan Futsal 4</h3>
+                <p>Vinyl Premium · 5 vs 5</p>
+                <div class="court-rates">
+                  <span>Pagi <b>Rp125k</b></span>
+                  <span>Malam <b>Rp205k</b></span>
+                  <span>Minggu/Libur <b>Rp155k</b></span>
+                </div>
+              </div>
+              <div class="rating">★ 4.9</div>
+            </div>
+            <div class="court-bottom">
+              <strong>Mulai Rp125.000 <small>/ jam</small></strong
+              ><a class="book-btn" href="detail.html?court=4">Pesan</a>
+            </div>
+          </article>
+
+          <!-- Lapangan Besar (2): Lapangan 11 & 12 -->
+          <article class="court-card" data-category="besar">
+            <div class="court-image image-futsal" style="background-image: url('https://images.unsplash.com/photo-1575361204480-aadea25e6e68?auto=format&fit=crop&w=800&q=80');">
+              <span class="badge">Besar</span>
+            </div>
+            <div class="court-info">
+              <div>
+                <h3>Lapangan Futsal 11</h3>
+                <p>Interlock Besar · 5 vs 5</p>
+                <div class="court-rates">
+                  <span>Pagi <b>Rp105k</b></span>
+                  <span>Malam <b>Rp155k</b></span>
+                  <span>Minggu/Libur <b>Rp130k</b></span>
+                </div>
               </div>
               <div class="rating">★ 4.8</div>
             </div>
             <div class="court-bottom">
-              <strong>Rp80.000 <small>/ jam</small></strong
-              ><a class="book-btn" href="detail.html">Pesan</a>
+              <strong>Mulai Rp105.000 <small>/ jam</small></strong
+              ><a class="book-btn" href="detail.html?court=11">Pesan</a>
             </div>
           </article>
-          <article class="court-card">
-            <div class="court-image image-basket">
-              <span class="badge">Basket</span>
+          <article class="court-card" data-category="besar">
+            <div class="court-image image-futsal" style="background-image: url('https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?auto=format&fit=crop&w=800&q=80');">
+              <span class="badge">Besar</span>
             </div>
             <div class="court-info">
               <div>
-                <h3>Warrior Basketball Court</h3>
-                <p>Komplek Griya Atlet · 3.1 km</p>
+                <h3>Lapangan Futsal 12</h3>
+                <p>Interlock Besar · 5 vs 5</p>
+                <div class="court-rates">
+                  <span>Pagi <b>Rp105k</b></span>
+                  <span>Malam <b>Rp155k</b></span>
+                  <span>Minggu/Libur <b>Rp130k</b></span>
+                </div>
+              </div>
+              <div class="rating">★ 4.8</div>
+            </div>
+            <div class="court-bottom">
+              <strong>Mulai Rp105.000 <small>/ jam</small></strong
+              ><a class="book-btn" href="detail.html?court=12">Pesan</a>
+            </div>
+          </article>
+
+          <!-- Lapangan Sintetis (6): Lapangan 1, 2, 6, 7, 8, 10 -->
+          <article class="court-card" data-category="sintetis">
+            <div class="court-image image-futsal" style="background-image: url('https://images.unsplash.com/photo-1529900748604-07564a03e7a6?auto=format&fit=crop&w=800&q=80');">
+              <span class="badge">Sintetis</span>
+            </div>
+            <div class="court-info">
+              <div>
+                <h3>Lapangan Futsal 1</h3>
+                <p>Rumput Sintetis · 5 vs 5</p>
+                <div class="court-rates">
+                  <span>Pagi <b>Rp85k</b></span>
+                  <span>Malam <b>Rp140k</b></span>
+                  <span>Minggu/Libur <b>Rp110k</b></span>
+                </div>
+              </div>
+              <div class="rating">★ 4.8</div>
+            </div>
+            <div class="court-bottom">
+              <strong>Mulai Rp85.000 <small>/ jam</small></strong
+              ><a class="book-btn" href="detail.html?court=1">Pesan</a>
+            </div>
+          </article>
+          <article class="court-card" data-category="sintetis">
+            <div class="court-image image-futsal" style="background-image: url('https://images.unsplash.com/photo-1551958219-acbc608c6377?auto=format&fit=crop&w=800&q=80');">
+              <span class="badge">Sintetis</span>
+            </div>
+            <div class="court-info">
+              <div>
+                <h3>Lapangan Futsal 2</h3>
+                <p>Rumput Sintetis · 5 vs 5</p>
+                <div class="court-rates">
+                  <span>Pagi <b>Rp85k</b></span>
+                  <span>Malam <b>Rp140k</b></span>
+                  <span>Minggu/Libur <b>Rp110k</b></span>
+                </div>
+              </div>
+              <div class="rating">★ 4.8</div>
+            </div>
+            <div class="court-bottom">
+              <strong>Mulai Rp85.000 <small>/ jam</small></strong
+              ><a class="book-btn" href="detail.html?court=2">Pesan</a>
+            </div>
+          </article>
+          <article class="court-card" data-category="sintetis">
+            <div class="court-image image-futsal" style="background-image: url('https://images.unsplash.com/photo-1543326727-cf6c39e8f84c?auto=format&fit=crop&w=800&q=80');">
+              <span class="badge">Sintetis</span>
+            </div>
+            <div class="court-info">
+              <div>
+                <h3>Lapangan Futsal 6</h3>
+                <p>Rumput Sintetis · 5 vs 5</p>
+                <div class="court-rates">
+                  <span>Pagi <b>Rp85k</b></span>
+                  <span>Malam <b>Rp140k</b></span>
+                  <span>Minggu/Libur <b>Rp110k</b></span>
+                </div>
               </div>
               <div class="rating">★ 4.7</div>
             </div>
             <div class="court-bottom">
-              <strong>Rp200.000 <small>/ jam</small></strong
-              ><a class="book-btn" href="detail.html">Pesan</a>
+              <strong>Mulai Rp85.000 <small>/ jam</small></strong
+              ><a class="book-btn" href="detail.html?court=6">Pesan</a>
+            </div>
+          </article>
+          <article class="court-card" data-category="sintetis">
+            <div class="court-image image-futsal" style="background-image: url('https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=800&q=80');">
+              <span class="badge">Sintetis</span>
+            </div>
+            <div class="court-info">
+              <div>
+                <h3>Lapangan Futsal 7</h3>
+                <p>Rumput Sintetis · 5 vs 5</p>
+                <div class="court-rates">
+                  <span>Pagi <b>Rp85k</b></span>
+                  <span>Malam <b>Rp140k</b></span>
+                  <span>Minggu/Libur <b>Rp110k</b></span>
+                </div>
+              </div>
+              <div class="rating">★ 4.8</div>
+            </div>
+            <div class="court-bottom">
+              <strong>Mulai Rp85.000 <small>/ jam</small></strong
+              ><a class="book-btn" href="detail.html?court=7">Pesan</a>
+            </div>
+          </article>
+          <article class="court-card" data-category="sintetis">
+            <div class="court-image image-futsal" style="background-image: url('https://images.unsplash.com/photo-1577223625816-7546f13df25d?auto=format&fit=crop&w=800&q=80');">
+              <span class="badge">Sintetis</span>
+            </div>
+            <div class="court-info">
+              <div>
+                <h3>Lapangan Futsal 8</h3>
+                <p>Rumput Sintetis · 5 vs 5</p>
+                <div class="court-rates">
+                  <span>Pagi <b>Rp85k</b></span>
+                  <span>Malam <b>Rp140k</b></span>
+                  <span>Minggu/Libur <b>Rp110k</b></span>
+                </div>
+              </div>
+              <div class="rating">★ 4.7</div>
+            </div>
+            <div class="court-bottom">
+              <strong>Mulai Rp85.000 <small>/ jam</small></strong
+              ><a class="book-btn" href="detail.html?court=8">Pesan</a>
+            </div>
+          </article>
+          <article class="court-card" data-category="sintetis">
+            <div class="court-image image-futsal" style="background-image: url('https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=800&q=80');">
+              <span class="badge">Sintetis</span>
+            </div>
+            <div class="court-info">
+              <div>
+                <h3>Lapangan Futsal 10</h3>
+                <p>Rumput Sintetis · 5 vs 5</p>
+                <div class="court-rates">
+                  <span>Pagi <b>Rp85k</b></span>
+                  <span>Malam <b>Rp140k</b></span>
+                  <span>Minggu/Libur <b>Rp110k</b></span>
+                </div>
+              </div>
+              <div class="rating">★ 4.8</div>
+            </div>
+            <div class="court-bottom">
+              <strong>Mulai Rp85.000 <small>/ jam</small></strong
+              ><a class="book-btn" href="detail.html?court=10">Pesan</a>
             </div>
           </article>
         </div>
@@ -168,7 +341,7 @@
         <div class="container">
           <div class="section-head centered">
             <div>
-              <span class="eyebrow">Kenapa Warrior Sport?</span>
+              <span class="eyebrow">Kenapa CourtGo?</span>
               <h2>Semua yang kamu butuhkan<br />untuk olahraga.</h2>
             </div>
           </div>
@@ -195,24 +368,13 @@
           </div>
         </div>
       </section>
-      <section class="cta container" id="kontak">
-        <div>
-          <span class="eyebrow">Siap mulai?</span>
-          <h2>Waktunya jadi lebih aktif.</h2>
-          <p>
-            Pesan lapangan favoritmu sekarang dan ajak teman-temanmu bermain.
-          </p>
-        </div>
-        <a class="btn btn-light" href="lapangan.html">Mulai booking →</a>
-      </section>
     </main>
     <footer class="footer">
       <div class="container footer-grid">
         <div>
           <a class="brand" href="#beranda"
-            ><span class="brand-mark">W</span
-            ><span>warrior<span class="brand-accent">sport</span></span></a
-          >
+            ><img class="brand-logo" src="logo.png" alt="SM Futsal Malang"
+          /></a>
           <p>
             Platform booking lapangan olahraga<br />yang bikin hidup lebih
             aktif.
@@ -220,7 +382,7 @@
         </div>
         <div>
           <h4>Menu</h4>
-          <a href="#beranda">Beranda</a><a href="lapangan.html">Lapangan</a
+          <a href="#beranda">Beranda</a><a href="#lapangan">Lapangan</a
           ><a href="#tentang">Tentang Kami</a>
         </div>
         <div>
@@ -230,7 +392,7 @@
         </div>
       </div>
       <div class="container footer-bottom">
-        © 2024 Warrior Sport. All rights reserved.
+        © 2024 CourtGo. All rights reserved.
       </div>
     </footer>
     <script>
@@ -238,8 +400,35 @@
         .querySelector("#bookingForm")
         .addEventListener("submit", (event) => {
           event.preventDefault();
-          location.href = "lapangan.html";
+          const courtType = document.querySelector("#courtTypeSelect")?.value;
+          if (courtType) {
+            const filterBtn = document.querySelector(`.filter-row .filter[data-filter="${courtType}"]`);
+            if (filterBtn) filterBtn.click();
+          }
+          document.querySelector("#lapangan")?.scrollIntoView({ behavior: "smooth" });
         });
+
+      // Filter Lapangan Futsal (Semua, Besar, Kecil)
+      const filterBtns = document.querySelectorAll(".filter-row .filter");
+      const courtCards = document.querySelectorAll(".court-grid .court-card");
+
+      filterBtns.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          filterBtns.forEach((b) => b.classList.remove("active"));
+          btn.classList.add("active");
+          const target = btn.getAttribute("data-filter");
+
+          courtCards.forEach((card) => {
+            const cat = card.getAttribute("data-category");
+            if (target === "all" || cat === target) {
+              card.style.display = "";
+            } else {
+              card.style.display = "none";
+            }
+          });
+        });
+      });
     </script>
+    <script src="app.js"></script>
   </body>
 </html>

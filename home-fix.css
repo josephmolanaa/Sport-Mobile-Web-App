@@ -5,8 +5,8 @@
   overflow: hidden;
   flex: none;
   margin: 0 auto;
-  padding: 42px 0 48px;
-  background: #536872;
+  padding: 24px 0 32px;
+  background: #7a0c12;
   box-shadow: none;
 }
 .booking-panel:before {
@@ -14,8 +14,8 @@
   position: absolute;
   inset: -28px;
   background:
-    linear-gradient(#526b7799, #6b747899),
-    url("https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&w=900&q=80")
+    linear-gradient(#7a0c1299, #3d020599),
+    url("https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&w=900&q=80")
       center/cover;
   filter: blur(8px);
   z-index: -2;
@@ -24,7 +24,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: #53687266;
+  background: #7a0c1266;
   z-index: -1;
 }
 .booking-panel-title {
@@ -36,23 +36,25 @@
     800 25px/1.6 Poppins,
     Arial,
     sans-serif;
-  text-shadow: 0 3px 2px #304452;
+  text-shadow: 0 3px 2px #3d0205;
 }
 .booking-panel-inner {
   max-width: 370px;
 }
 .hero {
-  min-height: 620px;
+  min-height: 0;
+  padding-bottom: 70px;
 }
 .section {
   padding-top: 70px;
 }
 @media (max-width: 760px) {
   .hero {
-    min-height: 640px;
+    min-height: 0;
+    padding-bottom: 40px;
   }
   .booking-panel {
-    padding: 36px 0 44px;
+    padding: 20px 0 28px;
   }
   .booking-panel-inner {
     width: calc(100% - 30px);
@@ -66,87 +68,104 @@
   }
 }
 .hero {
-  background: linear-gradient(117deg, #e9f0fb, #f8fbff 58%, #dce8f7);
+  background: linear-gradient(117deg, #fff0f1, #fffafa 58%, #ffe4e6);
 }
 .hero .eyebrow,
 .section .eyebrow {
-  color: #17439c;
+  color: #e6000f;
 }
 .hero h1 span {
-  color: #17439c;
+  color: #e6000f;
 }
 .hero .btn-primary,
 .booking-panel .btn-primary {
-  background: #173d98;
-  box-shadow: 0 10px 22px #173d9838;
+  background: #e6000f;
+  box-shadow: 0 10px 22px #e6000f38;
 }
 .hero .text-link {
-  color: #092f78;
-}
-.hero-stats strong {
-  color: #092f78;
+  color: #c4000d;
 }
 .site-header .brand-mark,
 .footer .brand-mark {
-  background: #173d98;
+  background: #e6000f;
 }
 .site-header .brand-accent,
 .footer .brand-accent {
-  color: #173d98;
+  color: #e6000f;
 }
 .booking-panel:before {
   background:
-    linear-gradient(#344d6299, #536b7d99),
-    url("https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&w=900&q=80")
+    linear-gradient(#7a0c1299, #c4000d99),
+    url("https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&w=900&q=80")
       center/cover;
 }
 .booking-panel:after {
-  background: #344d6270;
+  background: #7a0c1270;
 }
 .booking-panel-inner {
-  border-color: #173d98;
+  border-color: #fcd5d7;
 }
 .booking-panel h2 {
-  color: #092f78;
+  color: #e6000f;
 }
 .booking-panel select,
 .booking-panel input {
-  border-color: #173d98;
+  border-color: #fcd5d7;
 }
 .section .text-link {
-  color: #092f78;
+  color: #c4000d;
 }
 .benefits {
-  background: #eef4fb;
+  background: #fffafa;
 }
 .benefit-icon.green {
-  background: #dce8fa;
-  color: #173d98;
+  background: #fff0f1;
+  color: #e6000f;
 }
 .benefit-icon.orange {
-  background: #e5edfb;
-  color: #3159a6;
+  background: #fff5eb;
+  color: #ea580c;
 }
 .benefit-icon.blue {
-  background: #dce8fa;
-  color: #173d98;
+  background: #fff0f1;
+  color: #e6000f;
 }
 .cta {
-  background: #173d98;
+  background: #e6000f;
 }
 .cta .eyebrow {
-  color: #c9d8ff;
+  color: #ffd6d9;
 }
 :root {
-  --green: #173d98;
-  --deep: #092f78;
-  --pale: #eef4fb;
-  --line: #d8e2f1;
+  --green: #e6000f;
+  --deep: #1a1a1a;
+  --pale: #fffafa;
+  --line: #fcd5d7;
 }
 .rating {
-  color: #173d98;
+  color: #e6000f;
 }
 .book-btn {
-  background: #e2ebfb;
-  color: #173d98;
+  background: #fff0f1;
+  color: #e6000f;
+}
+.court-rates {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-top: 6px;
+  font-size: 10px;
+}
+.court-rates span {
+  background: #fff0f1;
+  color: #555;
+  padding: 3px 6px;
+  border-radius: 4px;
+}
+.court-rates span b {
+  color: #e6000f;
+  font-weight: 700;
+}
+.filter-row {
+  flex-wrap: wrap;
 }

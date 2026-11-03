@@ -7,15 +7,17 @@
 .hero {
   position: relative;
   overflow: hidden;
-  background: linear-gradient(117deg, #e5f8f0, #f6fcfa 58%, #d9f4ea);
+  background: linear-gradient(117deg, #fff0f1, #fffafa 58%, #ffe4e6);
   min-height: 580px;
   padding-top: 130px;
 }
 .hero-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
-  min-height: 420px;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+.hero-copy {
+  max-width: 720px;
 }
 .eyebrow {
   display: block;
@@ -54,71 +56,6 @@
   font-weight: 800;
   color: var(--deep);
 }
-.hero-stats {
-  display: flex;
-  gap: 35px;
-  margin-top: 54px;
-}
-.hero-stats div {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
-.hero-stats strong {
-  font-size: 22px;
-  color: var(--deep);
-}
-.hero-stats span {
-  font-size: 11px;
-  color: #81908a;
-}
-.hero-art {
-  height: 350px;
-  position: relative;
-}
-.sun {
-  position: absolute;
-  right: 55px;
-  top: 35px;
-  width: 290px;
-  height: 290px;
-  border-radius: 50%;
-  background: #bcebd8;
-}
-.player {
-  position: absolute;
-  right: 125px;
-  bottom: 5px;
-  width: 120px;
-  height: 260px;
-  border-radius: 60px 60px 25px 25px;
-  background: #f8fbf9;
-  box-shadow: 0 80px 0 -38px #172321;
-}
-.art-card {
-  position: absolute;
-  z-index: 2;
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 13px 32px #1a6e5720;
-  padding: 13px 17px;
-  color: var(--deep);
-  font-size: 13px;
-}
-.art-card small {
-  display: block;
-  color: #82908b;
-  font-size: 10px;
-  margin-top: 4px;
-}
-.card-top {
-  top: 55px;
-  left: 25px;
-}
-.card-bottom {
-  bottom: 35px;
-  left: 10px;
-}
 .booking-panel {
   position: relative;
   margin-top: -38px;
@@ -131,15 +68,15 @@
   width: min(100%, 370px);
   margin: auto;
   padding: 20px 21px 21px;
-  border: 1px solid #17366d;
+  border: 1px solid #fcd5d7;
   border-radius: 9px;
   background: #fff;
-  box-shadow: 0 1px 3px #102f5b33;
+  box-shadow: 0 1px 3px #e6000f1a;
   color: #68738b;
 }
 .booking-panel h2 {
   margin: 0 0 18px;
-  color: #082c72;
+  color: #e6000f;
   text-align: center;
   font:
     600 21px/1.3 Poppins,
@@ -163,7 +100,7 @@
   width: 100%;
   height: 34px;
   padding: 0 10px;
-  border: 1px solid #17366d;
+  border: 1px solid #fcd5d7;
   border-radius: 4px;
   background: #fff;
   color: #7b8494;
@@ -198,7 +135,7 @@
   margin: 0;
 }
 .benefits {
-  background: #f3faf7;
+  background: #fffafa;
   padding: 84px 0;
 }
 .centered {
@@ -225,16 +162,16 @@
   font-size: 25px;
 }
 .benefit-icon.green {
-  background: #d9f5e8;
+  background: #fff0f1;
   color: var(--green);
 }
 .benefit-icon.orange {
-  background: #fff0df;
-  color: #ed9b43;
+  background: #fff5eb;
+  color: #ea580c;
 }
 .benefit-icon.blue {
-  background: #e3effb;
-  color: #5285c1;
+  background: #fff0f1;
+  color: #e6000f;
 }
 .benefit h3 {
   font-size: 16px;
@@ -265,7 +202,7 @@
 }
 .cta p {
   font-size: 13px;
-  color: #ddfff1;
+  color: #ffe5e7;
   margin: 9px 0 0;
 }
 .btn-light {
@@ -308,8 +245,7 @@
     padding-top: 110px;
   }
   .hero-grid {
-    grid-template-columns: 1fr;
-    min-height: 700px;
+    min-height: 0;
   }
   .hero-copy {
     text-align: center;
@@ -317,19 +253,8 @@
   .hero-copy > p {
     margin: auto;
   }
-  .hero-actions,
-  .hero-stats {
+  .hero-actions {
     justify-content: center;
-  }
-  .hero-art {
-    height: 300px;
-  }
-  .player {
-    right: calc(50% - 60px);
-  }
-  .sun {
-    right: calc(50% - 145px);
-    top: 10px;
   }
   .section {
     padding: 70px 0;

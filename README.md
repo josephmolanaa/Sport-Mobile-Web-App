@@ -1,11 +1,10 @@
-﻿# Warrior Sport Replica
+﻿# CourtGo
 
 Multi-page responsive booking UI tanpa dependency build.
 
 ## Halaman
 
-- `index.html` — landing page
-- `lapangan.html` — daftar/filter/search lapangan
+- `index.html` — landing page & daftar/filter/search lapangan
 - `detail.html` — detail lapangan dan pilih jadwal
 - `pembayaran.html` — checkout pembayaran
 - `riwayat-pesanan.html` — daftar pesanan
