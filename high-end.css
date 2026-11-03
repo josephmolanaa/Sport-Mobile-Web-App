@@ -15,7 +15,6 @@ body {
 .cta {
   isolation: isolate;
 }
-.hero:after,
 .benefits:after {
   content: "";
   position: absolute;
