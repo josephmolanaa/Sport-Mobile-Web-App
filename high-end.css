@@ -15,16 +15,6 @@ body {
 .cta {
   isolation: isolate;
 }
-.benefits:after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  pointer-events: none;
-  background-image: radial-gradient(#e6000f14 0.7px, transparent 0.7px);
-  background-size: 6px 6px;
-  opacity: 0.16;
-}
 .benefits {
   position: relative;
 }

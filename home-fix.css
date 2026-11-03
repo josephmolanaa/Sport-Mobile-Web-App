@@ -67,8 +67,9 @@
     padding-top: 55px;
   }
 }
+main,
 .hero {
-  background: linear-gradient(117deg, #fff0f1, #fffafa 58%, #ffe4e6);
+  background: #ffffff;
 }
 .hero .eyebrow,
 .section .eyebrow {
